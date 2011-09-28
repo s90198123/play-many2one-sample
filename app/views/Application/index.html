@@ -1,0 +1,9 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+Welcome to new world! what's your name?
+
+<form action="@{create()}" method="post" accept-charset="utf-8">
+  <input type="text" name="player.name" value=""/>
+  <p><input type="submit" value="Continue &rarr;"/></p>
+</form>

@@ -1,0 +1,10 @@
+#{extends 'main.html' /}
+
+Awesome!! <span style="color: red">${player.pet.name}</span> looks very happy. <br />
+now <span style="color: blue">${player.name} </span>can own your group
+<form action="@{createGroup()}" method="post" accept-charset="utf-8">
+<input type="hidden" name="playerId" value="${player.id}" />
+<input type="text" name="group.name" value="" id=""/>
+  <p><input type="submit" value="Continue &rarr;"/></p>
+</form>
+

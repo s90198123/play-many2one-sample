@@ -1,0 +1,10 @@
+#{extends 'main.html' /}
+
+Hi! <span style="color: blue">${player.name}</span>, now you can have a pet naming
+
+<form action="@{createPet}" method="post" accept-charset="utf-8">
+<input type="hidden" name="playerId" value="${player.id}" />
+<input type="text" name="petName" value="" id=""/>
+  <p><input type="submit" value="Continue &rarr;"/></p>
+</form>
+

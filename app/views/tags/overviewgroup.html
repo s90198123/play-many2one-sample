@@ -1,0 +1,6 @@
+<table border="1">
+  <tr><th>Player</th><th>Group</th></tr>
+  #{list items:_players, as:'player'}
+  <tr><td>${player?.id} : ${player?.name}</td><td>${player?.group?.id} : ${player?.group?.name}</td></tr>
+  #{/list}
+</table>
