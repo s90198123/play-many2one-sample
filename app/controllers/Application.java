@@ -34,13 +34,10 @@ public class Application extends Controller {
     render(player);
   }
 
-  public static void createPet(long playerId, String petName) {
-    Pet pet = Pet.findOrCreate(petName);
-    if(!pet.isPersistent()){
-      pet.save();
-    }
+  public static void createPet(long playerId, Pet pet) {
+    Pet it = pet.getByName().saveIfNew();
     Player player = Player.findById(playerId);
-    player.pet = pet;
+    player.pet = it;
     player.save();
     newGroup(player.id);
   }
@@ -51,9 +48,9 @@ public class Application extends Controller {
   }
 
   public static void createGroup(long playerId, Group group) {
-    group.save();
+    Group it = group.getByName().saveIfNew();
     Player player = Player.findById(playerId);
-    player.group = group;
+    player.group = it;
     player.save();
     finish(playerId);
   }
